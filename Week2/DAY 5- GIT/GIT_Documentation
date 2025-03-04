@@ -1,0 +1,98 @@
+SRE Training (Day 5) - GIT
+
+Version Control System (VCS) - tool that helps track changes to files over time,
+allowing multiple people to collaborate efficiently. It maintains a history of
+modifications, making it easy to revert to previous versions if needed.
+GIT - Distributed Version Control Tool
+GitHub - Cloud platform that uses GIT
+
+I. GIT CONFIG
+● git config user.name “Rhea Robinson”
+● git config user.email “rhearobinson00@gmail.com”
+Local declaration (applies to a particular local git folder)
+● git config --global user.name “Rhea Robinson”
+Global declaration (applies to all repos)
+● git config –list - list configuration details
+
+II. GETTING STARTED WITH YOUR FIRST REPOSITORY
+1. CREATING GITHUB REPOSITORY
+The github repository will be available remotely on the cloud platform. The steps are ->
+Create a new repo >> give it a name >> Optional README file (contains details about the
+repository)
+
+2. CLONING TO THE LOCAL COMPUTER
+There are multiple cloning options ( I have used https ). Steps : Copy the https link to close
+-> use command - git clone https://github.com/rhearobinson19/Practice-1.git
+
+3. CREATE A NEW FILE ON LOCAL REPO, ADD, COMMIT AND PUSH TO REMOTE
+To create a new file, we can use touch command or echo with redirection among
+other ways.
+Any changes made to a new file must be added using the git add command, which
+pushes it to the staging area, and then can be committed using git commit with a
+commit message.
+
+4. BRANCHES & GIT PUSH
+The command git branch -M main shown below is to override the default master
+branch, rename and use as main.
+The committed changes need to be pushed to the remote using git push -u origin
+main command
+If remote origin was not added, it can be added using git remote add origin
+“repo_url” command where you replace repo_url with the url of your github repository.
+
+5. GIT PULL AND FETCH
+Just like how git push reflects the local changes on the remote repository, similarly,
+git pull and git fetch retrieves the changes made in the remote repo onto your local
+branch.
+
+Difference between git pull and git fetch:
+Below image shows a new file “file-2.txt” created on the remote repository
+The new file does not show up on your local, as shown
+Now, results of git fetch
+As observable, the command fetches the changes from the remote (proof of change is the
+change in COMMIT ID from b0f991a to 2bcb642) but does not merge them into your local
+branch as seen in the results of the ls (file-2 not reflected).
+Further, we have the results of git pull
+Again, as observable, the new commits were fetched, and merged into the local using fast
+forward merging as a result of which the ls command reflects the new file created.
+
+III. BRANCHES
+A branch in Git is like a separate version of your project where you can work on new
+features, fixes, or experiments without affecting the main codebase.
+git branch → Lists all local branches.
+git branch -a → Lists all local and remote branches.
+git branch -r → Lists only remote branch
+
+1. CREATING A NEW BRANCH
+
+2. MERGING
+You can review, compare and merge on github as a pull request
+Merging on local and pushing changes to remote
+IV. GIT STASH
+git stash is used to temporarily save uncommitted changes without committing them,
+allowing you to switch branches or perform other actions without losing progress.
+
+Applying the stash using git stash pop - executes the latest item stashed and removes it
+from the stash.
+
+KEY LEARNINGS
+1. git push v/s git push -u origin main
+In terms of results, both commands work the same. However the only difference is git
+push -u origin main is used for the first time to set the upstream to the origin(remote)
+and push changes to the main branch. Once this is done, git push will work just fine
+to push changes directly to the remote without explicit mentions.
+git push
+git push -u origin main
+2. git reset v/s git revert
+Discards all local changes (staged & unstaged) and resets the working directory to a
+specific commit (latest commit if not mentioned)
+Discarding the latest commit
+
+When you just do git reset <commit_id> it just changes the head reference. You need to
+force push the changes to reflect it on the remote. Image below shows file-4 deleted from
+local but still showing up on remote
+
+*git push --force origin main
+git revert is a better option because this creates a new commit that undoes the
+changes in file-4, instead of rewriting history.
+
+This is a offline tool, your data stays locally and is not send to any server!
