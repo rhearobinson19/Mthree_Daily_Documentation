@@ -1,0 +1,43 @@
+SRE Training (Day 6) - LINUX
+
+About LINUX
+Linux is an open-source operating system. It is the foundation of many operating systems
+(called distributions or distros ) like Ubuntu, Debian, Fedora, Arch, and Kali Linux. Linux
+is widely used in servers, desktops, embedded systems, cloud computing etc.
+Key features of linux
+✅ Open-Source – Free to use and modify
+✅ Secure – Less vulnerable to viruses and malware
+✅ Customizable – Modify anything, from the UI to the kernel
+✅ Lightweight & Fast – Runs efficiently on old and new hardware
+✅ Powerful CLI – Command-line interface gives full control
+✅ Stable & Reliable – Used in mission-critical systems (NASA, Google, AWS, etc.)
+✅ Huge Community Support – Forums, documentation, and open-source projects
+
+What is WSL?
+WSL (Windows Subsystem for Linux) is a compatibility layer developed by Microsoft that
+allows you to run a Linux environment directly on Windows without needing a separate
+virtual machine or dual boot setup.
+
+Useful WSL commands
+
+- wsl - run ubuntu
+- wsl –version - check wsl version
+- sudo apt update && sudo apt upgrade -y - update Ubuntu packages
+- wslconfig /setdefault Ubuntu - sets Ubuntu as the default Linux distribution for
+WSL
+- wsl --unregister Ubuntu - Uninstall/remove Ubuntu
+
+
+INSTALLING MYSQL ON UBUNTU
+We can install mysql on the ubuntu virtual machine using sudo apt install mysql-server-y
+command. It allows us to use sql on ubuntu cli.
+Commands : sudo apt update
+sudo apt install mysql-server -y
+sudo service mysql start
+sudo mysql -u root -p
+
+MYSQL SERVICE STATUS CHECK - sudo systemctl status mysql
+
+STARTING MYSQL
+CREATING NEW DATABASE & TABLES
+WORKING WITH FILES AND DIRECTORIES
