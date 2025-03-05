@@ -43,7 +43,7 @@ chmod +x minikube-reset-script.sh
 - **Restarted Minikube with optimized settings** (`minikube start --driver=docker ...`).
 - **Verified connectivity to Kubernetes API (`kubectl get nodes`)**.
 
-📷 **MiniKube Running:** [Screenshot](#)
+📷 **MiniKube Running:** ![Screenshot](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%204/SRE%20TRAINING%20(DAY%2018)%20-%20KUBERNETES%20DEPLOYMENT/Kubernetes_Screenshots/Minikube_Start.png)
 
 ### **Step 2️⃣: Running the Deployment Script**
 ```bash
@@ -55,7 +55,7 @@ chmod +x deploy-no-validate.sh
 - Verified if **Minikube was running** (`minikube status`).
 - Configured **Docker to use Minikube’s Docker daemon** (`eval $(minikube docker-env)`).
 
-📷 **Deployment Running:** [Screenshot](#)
+📷 **Deployment Running:** ![Screenshot](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%204/SRE%20TRAINING%20(DAY%2018)%20-%20KUBERNETES%20DEPLOYMENT/Kubernetes_Screenshots/Deployment_running.png)
 
 ### **Step 3️⃣: Building the Docker Image with Retries**
 ```bash
@@ -67,7 +67,7 @@ docker build --network=host -t k8s-master-app:latest .
 - Used **host network mode** in WSL2 for better connectivity.
 - Implemented **retry logic** (up to 3 attempts if build failed).
 
-📷 **Docker Build:** [Screenshot](#)
+📷 **Docker Build:** ![Screenshot](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%204/SRE%20TRAINING%20(DAY%2018)%20-%20KUBERNETES%20DEPLOYMENT/Kubernetes_Screenshots/Docker_building.png)
 
 ### **Step 4️⃣: Deploying Kubernetes Resources (Without Validation)**
 ```bash
@@ -80,7 +80,7 @@ kubectl apply -f <manifest-file> --validate=false --timeout=20s
 - Created **Deployments & Services** (ran Flask app in Kubernetes).
 - Created **HorizontalPodAutoscaler (HPA)** (enabled auto-scaling).
 
-📷 **Kubernetes Resources:** [Screenshot](#)
+📷 **Kubernetes Resources:** ![Screenshot](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%204/SRE%20TRAINING%20(DAY%2018)%20-%20KUBERNETES%20DEPLOYMENT/Kubernetes_Screenshots/Resources.png)
 
 ### **Step 5️⃣: Checking Deployment Status**
 ```bash
@@ -91,7 +91,7 @@ kubectl -n k8s-demo get pods --timeout=10s
 - Avoided waiting indefinitely due to potential API connectivity issues.
 - Displayed **deployment and pod status** instead of blocking execution.
 
-📷 **Deployment Status:** [Screenshot](#)
+📷 **Deployment Status:** ![Screenshot](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%204/SRE%20TRAINING%20(DAY%2018)%20-%20KUBERNETES%20DEPLOYMENT/Kubernetes_Screenshots/Deployment_Success.png)
 
 ### **Step 6️⃣: Setting Up Port Forwarding (With Collision Handling)**
 ```bash
@@ -102,7 +102,7 @@ kubectl -n k8s-demo port-forward svc/k8s-master-app 8080:80 &
 - Started **port forwarding in the background**.
 - Allowed manual override (`kubectl -n k8s-demo port-forward svc/k8s-master-app 8080:80`).
 
-📷 **Port Forwarding:** [Screenshot](#)
+📷 **Port Forwarding:** ![Screenshot](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%204/SRE%20TRAINING%20(DAY%2018)%20-%20KUBERNETES%20DEPLOYMENT/Kubernetes_Screenshots/port_forwarding.png)
 
 ### **Step 7️⃣: Accessing the Application**
 #### **🔹 Option 1: Port Forwarding (Localhost)**
@@ -111,7 +111,7 @@ kubectl -n k8s-demo port-forward svc/k8s-master-app 8080:80
 ```
 Opened: `http://localhost:8080`
 
-📷 **LocalHost :** [Screenshot](#)
+📷 **LocalHost :** ![Screenshot](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%204/SRE%20TRAINING%20(DAY%2018)%20-%20KUBERNETES%20DEPLOYMENT/Kubernetes_Screenshots/Localhost.png)
 
 #### **🔹 Option 2: NodePort (Minikube IP)**
 ```bash
@@ -123,7 +123,7 @@ Accessed at: `http://<MINIKUBE-IP>:30080`
 ```bash
 minikube dashboard
 ```
-📷 **Dashboard:** [Screenshot](#)
+📷 **Dashboard:** ![Screenshot](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%204/SRE%20TRAINING%20(DAY%2018)%20-%20KUBERNETES%20DEPLOYMENT/Kubernetes_Screenshots/Dashboard.png)
 
 ### **Step 9️⃣: Cleaning Up Deployment**
 ```bash
