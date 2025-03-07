@@ -1,4 +1,4 @@
-# Kubernetes Notes
+# SRE TRAINING (DAY 17) - KUBERNETES CONCEPTS
 
 ## Kubernetes Architecture
 Kubernetes follows a master-worker architecture where the control plane manages worker nodes that run containerized applications.
