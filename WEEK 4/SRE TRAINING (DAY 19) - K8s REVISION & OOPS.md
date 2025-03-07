@@ -1,6 +1,6 @@
-# Kubernetes Project Summary
+# SRE TRAINING (DAY 19) - KUBERNETES & OOPS
 
-## Overview
+## Kubernetes Project Summary
 Today we went over the Kubernetes Project executed yesterday and understood the concepts and project structure. This project is a containerized Python application deployed using Kubernetes. It includes application source code, Docker configurations, Kubernetes deployment manifests, and supporting documentation. Additionally, we reviewed object-oriented programming (OOP) concepts to enhance our understanding of software design principles used in the project.
 
 ## Project Structure
