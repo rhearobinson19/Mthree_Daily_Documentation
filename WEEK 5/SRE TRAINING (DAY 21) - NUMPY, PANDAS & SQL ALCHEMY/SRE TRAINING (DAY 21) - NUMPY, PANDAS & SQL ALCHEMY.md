@@ -159,9 +159,12 @@ SELECT * FROM users;
    ```sh
    sqlite3 C:\\Users\\rhear\\alchemy_practice2\\mydatabase.db
    ```
-2. **Using DB Browser for SQLite**
+   Snapshot : ![Output](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%205/SRE%20TRAINING%20(DAY%2021)%20-%20NUMPY%2C%20PANDAS%20%26%20SQL%20ALCHEMY/Images/cmd_db.png)
+   
+3. **Using DB Browser for SQLite**
    - Download [DB Browser](https://sqlitebrowser.org/dl/)
    - Accessed at `C:\Users\rhear\alchemy_practice2\mydatabase.db`
+   Snapshot : ![Output](https://github.com/rhearobinson19/Mthree_Daily_Documentation/blob/main/WEEK%205/SRE%20TRAINING%20(DAY%2021)%20-%20NUMPY%2C%20PANDAS%20%26%20SQL%20ALCHEMY/Images/db_wsl.png)
 
 ## 🔟 Exiting SQLite CLI
 To exit SQLite:
